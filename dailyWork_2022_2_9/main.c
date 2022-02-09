@@ -51,12 +51,50 @@ int findPeakElement(int* nums, int numsLen) {
 	return 0;
 }
 
+void test2()
+{
+	int arr[] = { 2,4,1,2,9,8,7 };
+	int len = sizeof(arr) / sizeof(arr[0]);
+	printf("%d", findPeakElement(arr, len));
+}
+
+
+void test3()
+{
+	long n = 0, k = 0;
+	while (~scanf("%ld %ld", &n, &k))
+	{
+		if (k == 0)
+		{
+			printf("%ld\n", n * n);
+			continue;
+		}
+		long count = 0;
+		for (long y = k + 1; y <= n; y++)
+		{
+			count += ((n / y) * (y - k)) + ((n % y < k) ? 0 : (n % y - k + 1));
+		}
+		printf("%ld\n", count);
+	}
+}
+
+void test4()
+{
+	char arr[100];
+	int k = 0;
+	while (scanf("%s", arr) != EOF)
+	{
+		scanf("%d", &k);
+		arr[k] = '\0';
+		printf("%s\n", arr);
+	}
+}
 
 int main()
 {
 	//test1();
-	int arr[] = { 2,4,1,2,9,8,7 };
-	int len = sizeof(arr) / sizeof(arr[0]);
-	printf("%d", findPeakElement(arr, len));
+	//test2();
+	//test3();
+	test4();
 	return 0;
 }
