@@ -90,11 +90,34 @@ void test4()
 	}
 }
 
+int lengthOfLongestSubstring(char* s) {
+	int len = strlen(s);
+	int map[127] = { 0 };
+	int l = 0;//leftSide
+	int r = 0;//rightSide
+	int max = 0;
+	while (r < len)
+	{
+		if (map[s[r]] == 0)
+		{
+			map[s[r++]]++;
+		}
+		else
+		{
+			map[s[l++]]--;
+		}
+		max = r - l > max ? r - l : max;
+	}
+	return max;
+}
+
 int main()
 {
 	//test1();
 	//test2();
 	//test3();
-	test4();
+	//test4();
+	char arr[] = "abcabcdabc";
+	printf("%d\n", lengthOfLongestSubstring(arr));
 	return 0;
 }
