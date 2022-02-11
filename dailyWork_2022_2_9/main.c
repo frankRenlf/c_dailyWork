@@ -111,13 +111,69 @@ int lengthOfLongestSubstring(char* s) {
 	return max;
 }
 
+char* convert_success(char* s, int numRows) {
+	if (numRows == 1) return s;
+
+	int step = numRows * 2 - 2; // 间距
+	int index = 0;// 记录s的下标
+	int len = strlen(s);
+	int add = 0; // 真实的间距
+	char static ret[1000] = { 0 };
+	int k = 0;
+	for (int i = 0; i < numRows; i++) // i表示行号
+	{
+		index = i;
+		add = i * 2;
+		while (index < len)//超出字符串长度计算下一层
+		{
+			ret[k] = s[index]; // 当前行的第一个字母
+			k++;
+			add = step - add;// 第一次间距是step -2*i，第二次是2*i, 
+			index += (i == 0 || i == numRows - 1) ? step : add; // 0行和最后一行使用step间距，其余使用add间距
+		}
+	}
+	ret[k] = '\0';
+	return ret;
+}
+
+char* convert_false(char* s, int numRows) {
+	if (numRows == 1) return s;
+
+	int step = numRows * 2 - 2; // 间距
+	int index = 0;// 记录s的下标
+	int len = strlen(s);
+	int add = 0; // 真实的间距
+	char* ret = (char*)malloc(sizeof(char) * len);
+	int k = 0;
+	for (int i = 0; i < numRows; i++) // i表示行号
+	{
+		index = i;
+		add = i * 2;
+		while (index < len)//超出字符串长度计算下一层
+		{
+			ret[k] = s[index]; // 当前行的第一个字母
+			k++;
+			add = step - add;// 第一次间距是step -2*i，第二次是2*i, 
+			index += (i == 0 || i == numRows - 1) ? step : add; // 0行和最后一行使用step间距，其余使用add间距
+		}
+	}
+	ret[k] = '\0';
+	return ret;
+}
+
+
 int main()
 {
 	//test1();
 	//test2();
 	//test3();
 	//test4();
-	char arr[] = "abcabcdabc";
-	printf("%d\n", lengthOfLongestSubstring(arr));
+	//char arr[] = "abcabcdabc";
+	//printf("%d\n", lengthOfLongestSubstring(arr));
+	char s[] = "Apalindromeisaword,phrase,number,orothersequenceofunitsthatcanbereadthesamewayineitherdirection,withgeneralallowancesforadjustmentstopunctuationandworddividers.";
+	int numRows = 2;
+
+	printf("%s\n", convert_success(s, numRows));
+	printf("%s\n", convert_false(s, numRows));
 	return 0;
 }
