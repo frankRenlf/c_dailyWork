@@ -2,6 +2,11 @@
 
 #include<stdio.h>
 #include<string.h>
+#include<math.h>
+
+
+#define INT_MIN pow(-2,31)
+#define INT_MAX pow(2,31)-1
 
 void test1()
 {
@@ -162,6 +167,60 @@ char* convert_false(char* s, int numRows) {
 }
 
 
+int reverse(int x) {
+	int tmp = 0;
+	int y = 0;
+	int arr[31] = { 0 };
+	for (tmp = 0; x != 0; tmp++)
+	{
+		arr[tmp] = (x % 10);
+		x /= 10;
+	}
+	for (int i = 0; i < tmp; i++)
+	{
+		if (y < INT_MIN / 10 || y > INT_MAX / 10) {
+			return 0;
+		}
+		y = y * 10 + arr[i];
+
+	}
+	return y;
+}
+
+int reverse_2(int x) {
+	int rev = 0;
+	while (x != 0) {
+		if (rev < INT_MIN / 10 || rev > INT_MAX / 10) {
+			return 0;
+		}
+		int digit = x % 10;
+		x /= 10;
+		rev = rev * 10 + digit;
+	}
+	return rev;
+}
+
+
+int isPalindrome(int x) {
+	char a[100];
+
+	sprintf(a, "%d", x);//把整数x，转化为字符串存入a中
+
+	int left = 0, right = 0;//从数组头尾两边向内判断嘛，定义两个左右索引
+	right = strlen(a) - 1;//数组从0开始，减一位
+
+	for (right, left; right > left; right--, left++)
+		//你从头尾分别向内判断，头部索引++，尾部索引--，若是头的索引都大于尾部的索引，说明判断完成
+	{
+		if (a[right] != a[left])
+		{
+			return 0;
+		}
+	}
+	return 1;
+}
+
+
 int main()
 {
 	//test1();
@@ -170,10 +229,12 @@ int main()
 	//test4();
 	//char arr[] = "abcabcdabc";
 	//printf("%d\n", lengthOfLongestSubstring(arr));
-	char s[] = "Apalindromeisaword,phrase,number,orothersequenceofunitsthatcanbereadthesamewayineitherdirection,withgeneralallowancesforadjustmentstopunctuationandworddividers.";
+	/*char s[] = "Apalindromeisaword,phrase,number,orothersequenceofunitsthatcanbereadthesamewayineitherdirection,withgeneralallowancesforadjustmentstopunctuationandworddividers.";
 	int numRows = 2;
-
 	printf("%s\n", convert_success(s, numRows));
-	printf("%s\n", convert_false(s, numRows));
+	printf("%s\n", convert_false(s, numRows));*/
+
+	//printf("%d\n", reverse(123));
+	printf("%d\n", isPalindrome(121));
 	return 0;
 }
