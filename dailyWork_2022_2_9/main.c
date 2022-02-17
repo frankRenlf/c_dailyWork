@@ -221,6 +221,29 @@ int isPalindrome(int x) {
 }
 
 
+int maxArea(int* height, int heightSize) {
+	int l = 0, r = heightSize - 1;
+	int max = 0;
+	while (l < r)
+	{
+		max = max > (height[l] > height[r] ? height[r] : height[l]) * (r - l) ? max : (height[l] > height[r] ? height[r] : height[l]) * (r - l);
+		if (height[l] < height[r])
+		{
+			l++;
+		}
+		else if (height[l] > height[r])
+		{
+			r--;
+		}
+		else
+		{
+			l++;
+			r--;
+		}
+	}
+	return max;
+}
+
 int main()
 {
 	//test1();
@@ -235,6 +258,9 @@ int main()
 	printf("%s\n", convert_false(s, numRows));*/
 
 	//printf("%d\n", reverse(123));
-	printf("%d\n", isPalindrome(121));
+	//printf("%d\n", isPalindrome(121));
+	int height[] = { 1,8,6,2,5,4,8,3,7 };
+	int s = sizeof(height) / sizeof(height[0]);
+	printf("%d\n", maxArea(height, s));
 	return 0;
 }
