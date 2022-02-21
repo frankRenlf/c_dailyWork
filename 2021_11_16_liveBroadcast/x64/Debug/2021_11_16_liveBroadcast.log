@@ -1,0 +1,5 @@
+﻿  function.c
+  main.c
+C:\Users\11195\source\repos\2021_11_16_liveBroadcast\main.c(8,1): warning C4047: “初始化”:“int”与“int *”的间接级别不同
+  正在生成代码...
+  2021_11_16_liveBroadcast.vcxproj -> C:\Users\11195\source\repos\2021_11_16_liveBroadcast\x64\Debug\2021_11_16_liveBroadcast.exe
