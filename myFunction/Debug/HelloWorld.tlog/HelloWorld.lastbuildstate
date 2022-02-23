@@ -1,0 +1,7 @@
+<<<<<<< HEAD
+PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.29.30133:TargetPlatformVersion=10.0.19041.0:
+Debug|Win32|C:\Users\11195\source\repos\HelloWorld\|
+=======
+PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.29.30133:TargetPlatformVersion=10.0.19041.0:
+Debug|Win32|C:\Users\11195\source\repos\HelloWorld\|
+>>>>>>> 87d84e7ad0e83cbbc9248988ec02a7dde4b8a65c
