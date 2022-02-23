@@ -1,0 +1,3 @@
+﻿  main.c
+C:\Users\11195\source\repos\Initial order of pointer\main.c(77): warning C4715: “create_node”: 不是所有的控件路径都返回值
+  Initial order of pointer.vcxproj -> C:\Users\11195\source\repos\Initial order of pointer\Debug\Initial order of pointer.exe
