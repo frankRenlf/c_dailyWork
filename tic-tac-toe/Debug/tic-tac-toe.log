@@ -1,0 +1,5 @@
+﻿  function.c
+C:\Users\11195\source\repos\tic-tac-toe\function.c(320,33): warning C4020: “DisplayBoard”: 实参太多
+  main.c
+  正在生成代码...
+  tic-tac-toe.vcxproj -> C:\Users\11195\source\repos\tic-tac-toe\Debug\tic-tac-toe.exe
