@@ -1,0 +1,11 @@
+int ch = 0;
+	while ((ch = fgetc(pr)) != EOF)
+	{
+		fputc(ch, pw);
+	}
+
+	fclose(pr);
+	pr = NULL;
+
+	fclose(pw);
+	pw = NULL;
