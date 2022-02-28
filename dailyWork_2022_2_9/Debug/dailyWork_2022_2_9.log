@@ -1,3 +1,7 @@
-﻿  main.c
-C:\Users\11195\source\repos\dailyWork_2022_2_9\main.c(151,27): warning C4013: “malloc”未定义；假设外部返回 int
+﻿  head.c
+C:\Users\11195\source\repos\dailyWork_2022_2_9\head.c(145,27): warning C4013: “malloc”未定义；假设外部返回 int
+C:\Users\11195\source\repos\dailyWork_2022_2_9\head.c(245,1): warning C4047: “初始化”:“char *”与“int”的间接级别不同
+C:\Users\11195\source\repos\dailyWork_2022_2_9\head.c(279,21): warning C4090: “函数”: 不同的“const”限定符
+  main.c
+  正在生成代码...
   dailyWork_2022_2_9.vcxproj -> C:\Users\11195\source\repos\dailyWork_2022_2_9\Debug\dailyWork_2022_2_9.exe
