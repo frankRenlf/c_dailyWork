@@ -29,3 +29,5 @@ struct S
 	char b;
 	int c;
 };
+
+int removeDuplicates(int* nums, int numsSize);

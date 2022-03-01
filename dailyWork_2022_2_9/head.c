@@ -310,4 +310,21 @@ int my_atoi(const char* arr)
 	return (int)sum;
 }
 
-
+int removeDuplicates(int* nums, int numsSize) {
+	if (numsSize == 0)
+	{
+		return 0;
+	}
+	int quick = 1;
+	int con = 1;
+	while (quick < numsSize)
+	{
+		if (nums[quick - 1] != nums[quick])
+		{
+			nums[con] = nums[quick];
+			con++;
+		}
+		quick++;
+	}
+	return con;
+}

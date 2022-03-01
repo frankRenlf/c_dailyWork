@@ -46,12 +46,23 @@
 //	return 0;
 //}
 
+//int main()
+//{
+//	struct S s = { 0 };
+//	printf("%d\n", offsetof(struct S, a));
+//	printf("%d\n", offsetof(struct S, b));
+//	printf("%d\n", offsetof(struct S, c));
+//
+//	return 0;
+//}
+
 int main()
 {
-	struct S s = { 0 };
-	printf("%d\n", offsetof(struct S, a));
-	printf("%d\n", offsetof(struct S, b));
-	printf("%d\n", offsetof(struct S, c));
-
+	int arr[] = { 1,2,3,3,4,5 };
+	int n = removeDuplicates(arr, 6);
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d ", arr[i]);
+	}
 	return 0;
 }
