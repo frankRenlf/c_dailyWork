@@ -2,6 +2,7 @@
 
 
 #include<stdio.h>
+#include<stdlib.h>
 #include<string.h>
 #include<math.h>
 #include<assert.h>
@@ -31,3 +32,9 @@ struct S
 };
 
 int removeDuplicates(int* nums, int numsSize);
+double findMedianSortedArrays(int* nums1, int nums1Size, int* nums2, int nums2Size);
+int compare_int(const void* a, const void* b);
+
+void test(int* a, int* b);
+
+double findMedianSortedArrays_success(int* nums1, int nums1Size, int* nums2, int nums2Size);

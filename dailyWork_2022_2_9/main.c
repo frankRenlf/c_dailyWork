@@ -56,13 +56,24 @@
 //	return 0;
 //}
 
+//int main()
+//{
+//	int arr[] = { 1,2,3,3,4,5 };
+//	int n = removeDuplicates(arr, 6);
+//	for (int i = 0; i < n; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
+
 int main()
 {
-	int arr[] = { 1,2,3,3,4,5 };
-	int n = removeDuplicates(arr, 6);
-	for (int i = 0; i < n; i++)
-	{
-		printf("%d ", arr[i]);
-	}
+	int arr[] = { 1, 3 };
+	int brr[] = { 2 };
+	//test(arr, brr);
+	double n = findMedianSortedArrays(arr, 2, brr, 1);
+	double m = findMedianSortedArrays_success(arr, 2, brr, 1);
+	printf("%lf\n%lf\n", n, m);
 	return 0;
 }

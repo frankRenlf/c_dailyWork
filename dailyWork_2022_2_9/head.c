@@ -328,3 +328,61 @@ int removeDuplicates(int* nums, int numsSize) {
 	}
 	return con;
 }
+
+void test(int* a, int* b)
+{
+	for (int i = 0; i < 2; i++)
+	{
+		printf("%d\n", a[i]);
+	}
+}
+
+int compare_int(const void* a, const void* b)
+{
+	return (*(int*)a - *(int*)b);
+}
+
+double findMedianSortedArrays(int* nums1, int nums1Size, int* nums2, int nums2Size) {
+	assert(nums1 && nums2);
+	int nums = nums1Size + nums2Size;
+	int* nums0 = (int*)malloc(sizeof(int) * (nums));
+	assert(nums0);
+	for (int i = 0; i < nums1Size; i++)
+	{
+		nums0[i] = nums1[i];
+	}
+	for (int i = 0; i < nums2Size; i++)
+	{
+		nums0[i+ nums1Size] = nums2[i];
+	}
+	qsort(nums0, nums1Size + nums1Size,sizeof(nums0[0]), compare_int);
+	if ((nums1Size + nums2Size) % 2 == 0)
+	{
+		return (nums0[nums1Size - 1] + nums0[nums1Size]) / 2.0;
+	}
+	int n = (nums1Size + nums2Size) / 2 +1;
+	return nums0[n]/1.0;
+}
+
+
+
+double findMedianSortedArrays_success(int* nums1, int nums1Size, int* nums2, int nums2Size) {
+	int length = nums1Size + nums2Size;
+	int p = 0, q = 0, pre = -1, next = -1;
+	for (int i = 0; i <= length / 2; i++) {
+		pre = next;
+		if (p < nums1Size && (q >= nums2Size || nums1[p] < nums2[q])) {
+			next = nums1[p];
+			p++;
+		}
+		else {
+			next = nums2[q];
+			q++;
+		}
+	}
+	if (length % 2 == 0)
+		return (pre + next) / 2.0;
+	return next;
+
+}
+
