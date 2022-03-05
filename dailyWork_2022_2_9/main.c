@@ -67,13 +67,28 @@
 //	return 0;
 //}
 
+//int main()
+//{
+//	int arr[] = { 1, 3 };
+//	int brr[] = { 2 };
+//	//test(arr, brr);
+//	double n = findMedianSortedArrays(arr, 2, brr, 1);
+//	double m = findMedianSortedArrays_success(arr, 2, brr, 1);
+//	printf("%lf\n%lf\n", n, m);
+//	return 0;
+//}
+
+//int main()
+//{
+//	printf("%d\n", addDigits(38));
+//	return 0;
+//}
+
 int main()
 {
-	int arr[] = { 1, 3 };
-	int brr[] = { 2 };
-	//test(arr, brr);
-	double n = findMedianSortedArrays(arr, 2, brr, 1);
-	double m = findMedianSortedArrays_success(arr, 2, brr, 1);
-	printf("%lf\n%lf\n", n, m);
+	int arr[] = { 2,8,4,5 };
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	int target = 13;
+	printf("%d\n", threeSumClosest(arr, sz, target));
 	return 0;
 }

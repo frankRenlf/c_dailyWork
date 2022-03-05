@@ -38,3 +38,8 @@ int compare_int(const void* a, const void* b);
 void test(int* a, int* b);
 
 double findMedianSortedArrays_success(int* nums1, int nums1Size, int* nums2, int nums2Size);
+int addDigits(int num);
+int addDigits_process(int num);
+
+int comp(const void* a, const void* b);
+int threeSumClosest(int* nums, int numsSize, int target);

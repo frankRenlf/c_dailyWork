@@ -386,3 +386,73 @@ double findMedianSortedArrays_success(int* nums1, int nums1Size, int* nums2, int
 
 }
 
+int addDigits(int num) {
+	int sum = 0;
+	while (num)
+	{
+		sum += num % 10;
+		num /= 10;
+		if (sum < 10 && num == 0)
+		{
+			break;
+		}
+		if (sum > 10 && num == 0)
+		{
+			num = sum;
+			sum = 0;
+		}
+	}
+	return sum;
+}
+
+int addDigits_process(int num) {
+	return (num - 1) % 9 + 1;
+}
+
+
+int comp(const void* a, const void* b) { return *(int*)a - *(int*)b; }
+int threeSumClosest(int* nums, int numsSize, int target) {
+	int n = numsSize;
+	assert(nums);
+	qsort(nums, numsSize, sizeof(nums[0]), comp);
+	int best = nums[0] + nums[1] + nums[2];
+	for (int i = 0; i < n - 2; i++)
+	{
+		if (i > 0 && nums[i] == nums[i - 1])
+		{
+			continue;
+		}
+		int l = i + 1;
+		int r = n - 1;
+		while (l < r)
+		{
+			int sum = nums[i] + nums[l] + nums[r];
+			if (abs(sum - target) < abs(best - target))
+			{
+				best = sum;
+			}
+			if (sum == target)
+			{
+				return sum;
+			}
+			if (sum < target)
+			{
+				l++;
+				while (nums[l - 1] == nums[l] && l < r)
+				{
+					l++;
+				}
+			}
+			else
+			{
+				r--;
+				while (nums[r] == nums[r + 1] && l < r)
+				{
+					r--;
+				}
+
+			}
+		}
+	}
+	return best;
+}
