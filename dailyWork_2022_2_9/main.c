@@ -84,11 +84,17 @@
 //	return 0;
 //}
 
+//int main()
+//{
+//	int arr[] = { 2,8,4,5 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int target = 13;
+//	printf("%d\n", threeSumClosest(arr, sz, target));
+//	return 0;
+//}
+
 int main()
 {
-	int arr[] = { 2,8,4,5 };
-	int sz = sizeof(arr) / sizeof(arr[0]);
-	int target = 13;
-	printf("%d\n", threeSumClosest(arr, sz, target));
-	return 0;
+	char* arr = convertToBase7(-16);
+	printf("%s\n", arr);
 }

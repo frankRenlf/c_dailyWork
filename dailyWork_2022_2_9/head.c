@@ -456,3 +456,40 @@ int threeSumClosest(int* nums, int numsSize, int target) {
 	}
 	return best;
 }
+
+char* convertToBase7(int num) {
+	char* ret = (char*)malloc(sizeof(char) * 33);
+	char tmp = '0';
+	int flag = 1;
+	if (num < 0)
+	{
+		flag = -1;
+		num *= -1;
+	}
+	if (num == 0)
+	{
+		return "0";
+	}
+	int i = 0;
+	while (num>0)
+	{
+		ret[i++] = num % 7 + '0';
+		num /= 7;
+	}
+	if (flag == -1)
+	{
+		ret[i++] = '-';
+	}
+	ret[i] = '\0';
+	int k = 0;
+	while (k<i)
+	{
+		tmp = ret[--i];
+		ret[i] = ret[k];
+		ret[k++] = tmp;
+	}
+
+	return ret;
+}
+
+
